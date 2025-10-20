@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+html {
+    font-family: Libre Baskerville, sans-serif;
+}
+
+#app {
+    /*min-height: 100vh;*/
+}
+
+.wrapper {
+    margin: 6vh auto auto;
+    max-width: 62vw; /* golden ratio */
+    /*box-shadow: 0px 0px 40px 5px rgb(220, 224, 232);*/
+    border-radius: 12px;
+    padding-bottom: 6vh;
+}
+
+#frontmatter {
+    padding-top: 15em;
+    text-align: center;
+}
+
+#frontmatter p {
+    font-size: 14pt;
+    font-weight: 400;
+}
+
+#fullname {
+    /*text-transform: capitalize;
+    text-decoration: underline;*/
+}
+
+#honorific {
+    color: rgb(108, 111, 133);
+    font-size: 0.62em;
+    font-style: italic;
+    font-weight: 400;
+}
+
+h1.head {
+    font-size: 3em;
+}
+
+.socials {
+    margin-top: 6vh;
+    font-size: 16pt;
+    color: rgb(108, 111, 133);
+}
+
+.inline {
+    display: inline;
+    margin: 0 0.125em;
+    padding: 0;
+    vertical-align: baseline;
+    height: 1em;
+}
+
+span.space {
+    display: inline-block;
+    width: 1em;
+}
+
+.badge {
+    box-shadow: 0px 0px 20px 5px rgb(220, 224, 232);
+    border-radius: 8px;
+    padding: 6px;
+    width: 10em;
+    background-color: rgb(108, 111, 133);
+    margin: 6vh auto 0;
+}
+
+.badge:hover {
+    background-color: rgb(76, 79, 105);
+    cursor: pointer;
+}
+
+.badge a {
+    text-decoration: none;
+    color: white;
+}
