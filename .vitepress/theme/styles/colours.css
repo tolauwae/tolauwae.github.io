@@ -1,0 +1,11 @@
+:root {
+    --text: black;
+    --text-inverse: white;
+    --subtext: #566B82;
+    --subtext-inverse: mix(var(--subtext), 70%);
+    --surface: #45475a;
+
+    --lines: #D8E1EA;
+
+    --highlight: #2A2D31;
+}

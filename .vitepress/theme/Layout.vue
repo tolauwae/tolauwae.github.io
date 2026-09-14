@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import {useData} from 'vitepress'
+import SiteNav from './components/sitenav.vue'
+import Article from './Article.vue'
 
 // https://vitepress.dev/reference/runtime-api#usedata
 const {site, frontmatter} = useData()
 </script>
 
 <template>
-  <div class="wrapper">
+  <SiteNav />
+  <main>
     <div id="frontmatter" v-if="frontmatter.home">
       <img width="120" height="120" style="clip-path: circle();" src="../../public/profile.png" alt="Profile picture">
       <h1 class="head"><span id="honorific">dr.</span> <span id="fullname">Tom Lauwaerts</span></h1>
@@ -28,9 +31,11 @@ const {site, frontmatter} = useData()
       -->
 
     </div>
-    <div v-else>
-      <a href="/">Home</a>
-      <Content/>
+    <div v-else-if="frontmatter.layout === 'article' || frontmatter.article">
+        <Article />
     </div>
-  </div>
+  </main>
+
+
+
 </template>

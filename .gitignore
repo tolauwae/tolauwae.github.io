@@ -1,3 +1,7 @@
 node_modules
 .vitepress/dist
 .vitepress/cache
+
+.idea
+.air
+.vscode

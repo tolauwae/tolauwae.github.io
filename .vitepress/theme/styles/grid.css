@@ -1,0 +1,28 @@
+:root {
+    /* Grid */
+    --grid-unit: 0.25rem;
+
+    /* Spacing */
+    --space-1: var(--grid-unit);
+    --space-2: calc(2 * var(--grid-unit));
+    --space-3: calc(3 * var(--grid-unit));
+    --space-4: calc(4 * var(--grid-unit));
+    --space-5: calc(5 * var(--grid-unit));
+    --space-6: calc(6 * var(--grid-unit));
+    --space-7: calc(7 * var(--grid-unit));
+    --space-8: calc(8 * var(--grid-unit));
+    --space-10: calc(10 * var(--grid-unit));
+    --space-12: calc(12 * var(--grid-unit));
+    --space-16: calc(16 * var(--grid-unit));
+
+    --navbar-height: var(--space-12);
+
+    /* Margin */
+    --page-max-width: calc(62 * 4 * var(--grid-unit));     /* golden ratio */
+    --content-max-width: calc(38 * 4 * var(--grid-unit));
+    --sidebar-max-width: calc(12 * 4 * var(--grid-unit));
+
+    /* Font sizes */
+    --tiny: calc(3 * var(--grid-unit));
+    --title: calc(12 * var(--grid-unit));
+}

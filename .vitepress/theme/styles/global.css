@@ -1,0 +1,7 @@
+.subdued {
+    color: var(--subtext);
+}
+
+p {
+    margin: 0 0 var(--space-4);
+}
