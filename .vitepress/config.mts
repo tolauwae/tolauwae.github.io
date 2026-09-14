@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import marginNotes from './markdown/margin-notes'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -6,5 +7,8 @@ export default defineConfig({
   description: "Personal website",
   markdown: {
     headers: true,
+    config(md) {
+      md.use(marginNotes)
+    },
   },
 })
