@@ -3,7 +3,7 @@
     <div class="site-nav__content">
       <div class="site-nav__left">Tom Lauwaerts</div>
       <div class="site-nav__center"></div>
-      <div class="site-nav__right"></div>
+      <div class="site-nav__right"><a href="/">CV</a><a href="/essays">Essays</a></div>
     </div>
   </nav>
 </template>
@@ -15,9 +15,10 @@
   box-sizing: border-box;
   width: 100%;
   min-height: var(--navbar-height);
-  border-bottom: 0.5px solid var(--lines);
-  background-color: var(--surface);
+  background-color: var(--navbar);
   color: var(--text-inverse);
+  border-bottom: 0.5px solid var(--lines);
+  font-weight: 500;
 }
 
 .site-nav__content {
@@ -36,5 +37,29 @@
 
 .site-nav__right {
   justify-self: end;
+  font-size: var(--tiny);
+}
+
+.site-nav__right * {
+  margin-left: var(--space-4);
+}
+
+a {
+    color: var(--text-inverse);
+    background-color: transparent;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+a:hover {
+    background-color: transparent;
+    border-bottom: 1px solid var(--text-inverse);
+}
+
+@media (max-width: 62rem) {
+  .site-nav {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
 }
 </style>

@@ -27,7 +27,7 @@ const contentRef = useMarginNoteLayout()
   width: 100%;
   max-width: var(--page-max-width);
   margin: 0 auto;
-  padding-top: var(--space-8);
+  padding-top: var(--space-4);
 }
 
 .article__content #toc { grid-column: 1; }
@@ -53,6 +53,11 @@ const contentRef = useMarginNoteLayout()
 .article__body :deep(.margin-notes--ready .margin-note-group) {
   position: absolute; top: var(--margin-note-top); right: 0; left: 0; margin-bottom: 0;
 }
+
+:deep(.footnote-ref a) {
+  margin-left: 0.25rem;
+}
+
 .article__main { background-color: white; color: var(--text); }
 
 @media (max-width: 62rem) {

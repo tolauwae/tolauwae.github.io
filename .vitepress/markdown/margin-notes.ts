@@ -10,6 +10,9 @@ import footnote from 'markdown-it-footnote'
 export default function marginNotes(md: MarkdownIt): void {
   md.use(footnote)
 
+  md.renderer.rules.footnote_caption = (tokens, index) =>
+    String((tokens[index].meta as { id: number }).id + 1)
+
   md.renderer.rules.footnote_block_open = () =>
     '<section class="margin-notes" aria-labelledby="margin-notes-label">\n' +
     '<h2 id="margin-notes-label" class="margin-notes__title">Notes</h2>\n'

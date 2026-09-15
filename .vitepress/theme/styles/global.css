@@ -1,7 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root{
+    --serif: Libre Baskerville, serif;
+}
+
+html {
+    font-family: "Mona Sans", sans-serif;
+}
+
 .subdued {
     color: var(--subtext);
 }
 
 p {
     margin: 0 0 var(--space-4);
+}
+
+a {
+    color: var(--subtext);
+    background-color: var(--mantle);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--subtext);
+}
+
+a:hover {
+    background-color: var(--lines);
+    border-bottom-style: solid;
+    cursor: pointer;
 }

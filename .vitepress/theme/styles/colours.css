@@ -3,9 +3,12 @@
     --text-inverse: white;
     --subtext: #566B82;
     --subtext-inverse: mix(var(--subtext), 70%);
-    --surface: #45475a;
+
+    --surface: #111c27;
+    --navbar: #111c27;
 
     --lines: #D8E1EA;
+    --mantle: #EBF0F5;
 
     --highlight: #2A2D31;
 }

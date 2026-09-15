@@ -2,9 +2,10 @@
 import {useData} from 'vitepress'
 import SiteNav from './components/sitenav.vue'
 import Article from './Article.vue'
+import Overview from './Overview.vue'
 
 // https://vitepress.dev/reference/runtime-api#usedata
-const {site, frontmatter} = useData()
+const {site, frontmatter, page} = useData()
 </script>
 
 <template>
@@ -30,6 +31,9 @@ const {site, frontmatter} = useData()
       </div>
       -->
 
+    </div>
+    <div v-else-if="page.relativePath.endsWith('/index.md')">
+      <Overview />
     </div>
     <div v-else-if="frontmatter.layout === 'article' || frontmatter.article">
         <Article />

@@ -19,10 +19,12 @@ const {page} = useData()
 #toc {
   align-self: start;
   padding: 0 var(--space-4) var(--space-8) 0;
+  text-align: end;
 }
 
 h2 {
-  margin: 0 0 var(--space-4);
+  margin: 0 0 var(--space-2);
+  font-family: var(--serif);
   font-size: 1rem;
 }
 
@@ -34,8 +36,18 @@ h2 {
 
 :deep(a) {
   color: var(--subtext);
-  font-size: var(--tiny);
-  line-height: 1.4;
+  font-family: var(--serif);
+  font-size: var(--toc);
+  line-height: 1.0;
   text-decoration: none;
+  background-color: inherit;
+  border: none;
+}
+
+:deep(a:hover) {
+  color: var(--text);
+  text-decoration: none;
+  background-color: inherit;
+  border-bottom: 1px solid var(--text);
 }
 </style>

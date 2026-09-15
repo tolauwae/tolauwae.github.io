@@ -21,7 +21,7 @@ defineProps<{
   gap: var(--space-2);
   color: var(--subtext);
   font-size: var(--tiny);
-  line-height: 1.5;
+  line-height: 1.8;
 }
 
 .margin-note__number {
@@ -37,6 +37,13 @@ defineProps<{
 }
 
 .margin-note__content :deep(.footnote-backref) {
+  display: none;
   white-space: nowrap;
+}
+
+@media (max-width: 62rem) {
+  .margin-note__content :deep(.footnote-backref) {
+    display: inline;
+  }
 }
 </style>

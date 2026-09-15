@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {useData} from "vitepress"
+import AilBadge from "./ailbadge.vue"
 
 const {frontmatter} = useData()
 
@@ -23,7 +24,10 @@ function formatDate(value: unknown): string {
     <div class="article__metadata-grid">
       <div class="article__metadata-content">
         <b>{{ frontmatter.author }}</b>
-        <p class="subdued">{{ formatDate(frontmatter.date) }}</p>
+        <span class="subdued tags">
+          <span>{{ formatDate(frontmatter.date) }}</span>
+          <AilBadge :level="frontmatter.ail" />
+        </span>
       </div>
     </div>
   </section>
@@ -41,7 +45,7 @@ function formatDate(value: unknown): string {
 .article__metadata-content {
   grid-column: 2;
   padding-top: var(--space-8);
-  border-bottom: 2px solid var(--highlight);
+  border-bottom: 2px solid var(--lines);
 }
 
 .metadata {
@@ -49,4 +53,9 @@ function formatDate(value: unknown): string {
   line-height: 1.5;
 }
 
+span.tags {
+  display: flex;
+  gap: var(--space-4);
+  padding-bottom: var(--space-4);
+}
 </style>
