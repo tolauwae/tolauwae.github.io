@@ -25,7 +25,7 @@ import PageHeader from "./components/pageheader.vue"
               with a focus on making complex software easier to reason about.
             </p>
             <a class="resume-button" href="/resume.pdf" target="_blank">
-              Full resume
+              Curriculum Vitae
               <svg class="button__icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M14 6 20 12l-6 6M4 12h16" />
               </svg>
@@ -140,11 +140,6 @@ section {
 .portrait {
     anchor-name: --portrait;
     border-radius: var(--space-2);
-}
-
-#resume:hover .portrait,
-#resume:focus-visible .portrait {
-    content: url("../../public/portrait.png");
 }
 
 .portrait-cell {

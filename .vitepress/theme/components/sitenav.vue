@@ -3,7 +3,7 @@
     <div class="site-nav__content">
       <div class="site-nav__left"><a href="/">Tom Lauwaerts</a></div>
       <div class="site-nav__center"></div>
-      <div class="site-nav__right"><a href="/essays">Essays</a></div>
+      <div class="site-nav__right"><a class="resume-button" href="/resume.pdf" target="_blank">CV</a><a href="/essays">Essays</a></div>
     </div>
   </nav>
 </template>

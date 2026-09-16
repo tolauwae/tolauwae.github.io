@@ -3,6 +3,10 @@
     display: none !important;
   }
 
+  .site-footer {
+    display: none !important;
+  }
+
   .page-header__label {
     display: none !important;
   }
