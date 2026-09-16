@@ -5,6 +5,7 @@ import type { Theme } from 'vitepress'
 import './styles/colours.css'
 import './styles/global.css'
 import './styles/grid.css'
+import './styles/print.css'
 import './style.css'
 
 export default {

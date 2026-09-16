@@ -1,0 +1,14 @@
+@media print {
+  .site-nav {
+    display: none !important;
+  }
+
+  .page-header__label {
+    display: none !important;
+  }
+
+  .page-header,
+  .page-header p {
+    color: var(--text) !important;
+  }
+}
