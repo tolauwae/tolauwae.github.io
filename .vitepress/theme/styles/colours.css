@@ -2,9 +2,10 @@
     --text: black;
     --text-inverse: white;
     --subtext: #566B82;
-    --subtext-inverse: mix(var(--subtext), 70%);
+    --subtext-inverse: color-mix(in srgb, var(--text-inverse) 70%, transparent);
 
     --surface: #111c27;
+    --crust: #d8e1ea;
     --navbar: #111c27;
 
     --lines: #D8E1EA;

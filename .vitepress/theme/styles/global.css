@@ -9,6 +9,11 @@ html {
     font-family: "Mona Sans", sans-serif;
 }
 
+.nostyle, .nostyle:hover {
+    background-color: inherit;
+    border: none;
+}
+
 .subdued {
     color: var(--subtext);
 }
@@ -29,3 +34,17 @@ a:hover {
     border-bottom-style: solid;
     cursor: pointer;
 }
+
+.section__heading {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 0 var(--space-4);
+    padding: var(--space-2) 0;
+    border-bottom: 2px solid var(--text);
+    border-top: 1px solid var(--lines);
+    font-size: 1.17em;
+  }
+  .section__heading * {
+    margin: 0;
+    padding: 0;
+  }

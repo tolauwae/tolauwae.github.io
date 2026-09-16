@@ -11,7 +11,6 @@ const fileName = computed(() => pathParts.value.at(-1)?.slice(0, -3) ?? "")
 const directoryName = computed(() => pathParts.value.at(-2) ?? "")
 const sectionName = computed(() => directoryName.value.charAt(0).toUpperCase() + directoryName.value.slice(1))
 const isOverview = computed(() => props.variant === "overview")
-const label = computed(() => isOverview.value ? sectionName.value : [directoryName.value, fileName.value].join(" / "))
 const title = computed(() => frontmatter.value.title || sectionName.value)
 </script>
 
@@ -19,9 +18,11 @@ const title = computed(() => frontmatter.value.title || sectionName.value)
   <header class="page-header" :class="{ overview: isOverview }">
     <div class="page-header__grid">
       <div class="page-header__content">
-        <span class="page-header__label">{{ label }}</span>
-        <h1>{{ title }}</h1>
-        <p v-if="frontmatter.description">{{ frontmatter.description }}</p>
+        <slot>
+          <span class="page-header__label">{{ frontmatter.language }}</span>
+          <h1>{{ title }}</h1>
+          <p v-if="frontmatter.description">{{ frontmatter.description }}</p>
+        </slot>
       </div>
     </div>
   </header>

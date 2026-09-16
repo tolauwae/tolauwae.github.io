@@ -34,6 +34,7 @@ const contentRef = useMarginNoteLayout()
 .article__body { grid-column: 2 / 4; min-width: 0; }
 .article__body > :deep(div) { position: relative; min-width: 0; }
 .article__body > :deep(div > :not(.margin-notes)) { max-width: var(--content-max-width); min-width: 0; }
+.article__body > :deep(div > p) { text-align: justify; text-justify: inter-word; }
 .article__body :deep(.margin-notes) { margin-top: var(--space-8); }
 .article__body :deep(.margin-notes__title) {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
