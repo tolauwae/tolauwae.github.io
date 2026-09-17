@@ -93,6 +93,8 @@
   }
 
   @media (max-width: 62rem) {
-
+    .info {
+      grid-template-columns: 1fr;
+    }
   }
   </style>

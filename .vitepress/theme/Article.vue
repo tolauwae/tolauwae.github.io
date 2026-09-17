@@ -24,6 +24,7 @@ const contentRef = useMarginNoteLayout()
 .article__content {
   display: grid;
   grid-template-columns: var(--sidebar-max-width) var(--content-max-width) var(--sidebar-max-width);
+  box-sizing: border-box;
   width: 100%;
   max-width: var(--page-max-width);
   margin: 0 auto;
@@ -63,7 +64,8 @@ const contentRef = useMarginNoteLayout()
 
 @media (max-width: 62rem) {
   .article__content { grid-template-columns: minmax(0, 1fr); padding-right: var(--space-4); padding-left: var(--space-4); }
-  .article__content #toc, .article__body { grid-column: 1; }
+  .article__content #toc { display: none; }
+  .article__body { grid-column: 1; }
   .article__body > :deep(div) { position: static; min-height: 0; }
   .article__body > :deep(div > :not(.margin-notes)) { max-width: none; }
   .article__body :deep(.margin-notes), .article__body :deep(.margin-notes--ready) {

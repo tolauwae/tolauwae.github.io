@@ -38,7 +38,7 @@ function formatDate(value: unknown): string {
   display: grid;
   grid-template-columns: var(--sidebar-max-width) calc(var(--content-max-width) + var(--sidebar-max-width));
   width: 100%;
-  max-width: var(--page-max-width);
+  max-width: min(var(--page-max-width), 100vw);
   margin: 0 auto;
 }
 
@@ -57,5 +57,17 @@ span.tags {
   display: flex;
   gap: var(--space-4);
   padding-bottom: var(--space-4);
+}
+
+@media (max-width: 62rem) {
+  .article__metadata-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .article__metadata-content {
+    grid-column: 1 / -1;
+    margin-left: var(--space-4);
+    margin-right: var(--space-4);
+  }
 }
 </style>

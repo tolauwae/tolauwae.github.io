@@ -171,12 +171,9 @@ section {
   color: color-mix(in srgb, var(--text-inverse) 70%, transparent);
 }
 
-.home__intro img {
-  flex: 0 0 auto;
-  width: 140px;
-  height: 140px;
+img.portrait {
   object-fit: cover;
-  object-position: center 25%;
+  object-position: center top;
 }
 
 .home__content {
@@ -230,17 +227,14 @@ section {
     grid-row: 1;
     width: 100%;
     height: 16rem;
-    object-fit: cover;
-    object-position: center 25%;
   }
 
-  .home__intro img {
-    width: 120px;
-    height: 120px;
-  }
+  img.portrait {
+      margin: 0 auto;
+    }
 }
 
-@media (max-width: 28rem) {
+@media (max-width: 62rem) {
 .home__intro {
     align-items: flex-start;
   }
@@ -249,9 +243,11 @@ section {
     font-size: calc(9 * var(--grid-unit));
   }
 
-  .home__intro img {
-    width: 96px;
-    height: 96px;
+
+  img.portrait {
+      max-width: min(100%, 256px);
+      height: auto;
+      aspect-ratio: 1 / 1;
   }
 }
 </style>
