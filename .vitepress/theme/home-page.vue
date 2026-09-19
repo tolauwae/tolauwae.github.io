@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import EssayList from "./components/essaylist.vue"
-import PageHeader from "./components/pageheader.vue"
+import EssayList from "./components/essay-list.vue"
+import PageHeader from "./components/page-header.vue"
 </script>
 
 <template>
@@ -14,8 +14,7 @@ import PageHeader from "./components/pageheader.vue"
       </div>
     </PageHeader>
 
-    <div class="home__content">
-
+    <div class="home__content prose-container">
       <section class="portrait-cell section__fullwidth">
         <div id="resume">
           <div>
@@ -24,19 +23,46 @@ import PageHeader from "./components/pageheader.vue"
               My research explores programming languages, testing, and debugging,
               with a focus on making complex software easier to reason about.
             </p>
-            <a class="resume-button" href="/resume.pdf" target="_blank">
+            <a
+              class="resume-button"
+              href="/resume.pdf"
+              target="_blank"
+            >
               Curriculum Vitae
-              <svg class="button__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <svg
+                class="button__icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
                 <path d="M14 6 20 12l-6 6M4 12h16" />
               </svg>
             </a>
           </div>
-          <img class="portrait" src="/portrait.png" alt="Portrait of Tom Lauwaerts" width="256" height="384">
+          <img
+            class="portrait"
+            src="/portrait.png"
+            alt="Portrait of Tom Lauwaerts"
+            width="256"
+            height="384"
+          >
         </div>
       </section>
 
-      <section class="home__section section__fullwidth" aria-labelledby="essays-heading">
-        <span id="essays-heading" class="section__heading"><h3>Latest Essays</h3><a class="home__more" href="/essays/">All essays <svg class="thin-icon button__icon" viewBox="0 0 24 24" aria-hidden="true">
+      <section
+        class="home__section section__fullwidth"
+        aria-labelledby="essays-heading"
+      >
+        <span
+          id="essays-heading"
+          class="section-heading"
+        ><h3>Latest Essays</h3><a
+          class="home__more"
+          href="/essays/"
+        >All essays <svg
+          class="thin-icon button__icon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
           <path d="M14 6 20 12l-6 6M4 12h16" />
         </svg></a></span>
         <EssayList :limit="2" />
@@ -51,21 +77,12 @@ import PageHeader from "./components/pageheader.vue"
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     gap: var(--space-8);
-    box-sizing: border-box;
     color: var(--text);
-
-    max-width: var(--content-max-size);
-    width: 100%;
-    margin-left: var(--space-4);
-    margin-right: var(--space-4);
-
     border: 1px solid var(--lines);
     border-radius: var(--space-2);
     padding: var(--space-8);
-
-    background: rgba(255, 255, 255, 0.2);
+    background: rgb(255 255 255 / 20%);
     backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
 }
 
 #resume h3 {
@@ -75,16 +92,13 @@ import PageHeader from "./components/pageheader.vue"
     line-height: 1.3;
 }
 
-#resume p {
-    color: var(--subtext);
-}
-
 .resume-button {
     position: relative;
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
     color: var(--text);
+    font-weight: bold;
     background-color: transparent;
     border: none;
 }
@@ -93,7 +107,7 @@ import PageHeader from "./components/pageheader.vue"
     width: 1.1em;
     height: 1.1em;
     fill: none;
-    stroke: currentColor;
+    stroke: currentcolor;
     stroke-width: 2.5;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -101,13 +115,6 @@ import PageHeader from "./components/pageheader.vue"
 
 .thin-icon {
   stroke-width: 1.5;
-}
-
-.resume-button {
-    color: var(--text);
-    font-weight: bold;
-    background-color: transparent;
-    border: none;
 }
 
 .resume-button::after {
@@ -148,7 +155,6 @@ section {
     display: grid;
     place-items: center;
     margin-top: calc(-1 * var(--space-16));
-    width: var(--content-max-size);
 }
 
 .home__intro {
@@ -171,6 +177,10 @@ section {
   color: color-mix(in srgb, var(--text-inverse) 70%, transparent);
 }
 
+#resume p {
+  color: var(--subtext);
+}
+
 img.portrait {
   object-fit: cover;
   object-position: center top;
@@ -180,11 +190,7 @@ img.portrait {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-2);
-  box-sizing: border-box;
-  width: 100%;
-  max-width: var(--content-max-width);
-  margin: 0 auto;
-  padding: 0 var(--space-4) var(--space-24);
+  padding-bottom: var(--space-24);
   color: var(--text);
 }
 
@@ -206,10 +212,6 @@ img.portrait {
   border-bottom: 1px solid white;
 }
 
-.home__more:hover {
-  border-bottom: 1px solid var(--subtext);
-}
-
 .home__more {
   display: inline-flex;
   align-items: center;
@@ -218,7 +220,11 @@ img.portrait {
   gap: var(--space-1);
 }
 
-@media (max-width: 34rem) {
+.home__more:hover {
+  border-bottom: 1px solid var(--subtext);
+}
+
+@media (width <= 34rem) {
   #resume {
     grid-template-columns: 1fr;
   }
@@ -234,7 +240,7 @@ img.portrait {
     }
 }
 
-@media (max-width: 62rem) {
+@media (width <= 62rem) {
 .home__intro {
     align-items: flex-start;
   }

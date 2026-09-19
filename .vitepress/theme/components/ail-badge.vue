@@ -13,27 +13,47 @@ const normalizedLevel = computed(() => {
 </script>
 
 <template>
-  <span class="" tabindex="0" :aria-describedby="tooltipId">
-    <a class="hide-link ail-badge" target="_blank" href="https://danielmiessler.com/blog/ai-influence-level-ail">
-    AIL <b>{{ level }}</b>
-    <svg
-      v-for="marker in 5"
-      :key="marker"
-      class="ail-badge__marker"
-      :class="{ inactive: marker > normalizedLevel }"
-      viewBox="0 0 6 4"
-      aria-hidden="true"
+  <span
+    class=""
+    tabindex="0"
+    :aria-describedby="tooltipId"
+  >
+    <a
+      class="hide-link ail-badge"
+      target="_blank"
+      href="https://danielmiessler.com/blog/ai-influence-level-ail"
     >
-      <rect width="6" height="4" rx="2" />
-    </svg>
-    <span :id="tooltipId" class="ail-badge__tooltip" role="tooltip">
-      AI Influence Level (AIL) v1.1
-    </span>
+      AIL <b>{{ level }}</b>
+      <svg
+        v-for="marker in 5"
+        :key="marker"
+        class="ail-badge__marker"
+        :class="{ inactive: marker > normalizedLevel }"
+        viewBox="0 0 6 4"
+        aria-hidden="true"
+      >
+        <rect
+          width="6"
+          height="4"
+          rx="2"
+        />
+      </svg>
+      <span
+        :id="tooltipId"
+        class="ail-badge__tooltip"
+        role="tooltip"
+      >
+        AI Influence Level (AIL) v1.1
+      </span>
     </a>
   </span>
 </template>
 
 <style scoped>
+* {
+  font-family: var(--sans-serif);
+}
+
 .ail-badge {
   position: relative;
   display: inline-flex;
@@ -46,7 +66,7 @@ const normalizedLevel = computed(() => {
 .ail-badge__marker {
   width: calc(1.5 * var(--space-1));
   height: var(--space-1);
-  fill: currentColor;
+  fill: currentcolor;
 }
 
 .ail-badge__marker.inactive {

@@ -1,0 +1,90 @@
+:root {
+  /* Grid */
+  --grid-unit: 0.25rem;
+
+  /* Spacing */
+  --space-1: var(--grid-unit);
+  --space-2: calc(2 * var(--grid-unit));
+  --space-3: calc(3 * var(--grid-unit));
+  --space-4: calc(4 * var(--grid-unit));
+  --space-5: calc(5 * var(--grid-unit));
+  --space-6: calc(6 * var(--grid-unit));
+  --space-7: calc(7 * var(--grid-unit));
+  --space-8: calc(8 * var(--grid-unit));
+  --space-10: calc(10 * var(--grid-unit));
+  --space-12: calc(12 * var(--grid-unit));
+  --space-16: calc(16 * var(--grid-unit));
+  --space-24: calc(24 * var(--grid-unit));
+  --navbar-height: var(--space-12);
+
+  /* Layout widths */
+  --page-max-width: calc(62 * 4 * var(--grid-unit));
+  --prose-and-notes-max-width: calc(50 * 4 * var(--grid-unit));
+  --content-max-width: calc(38 * 4 * var(--grid-unit));
+  --sidebar-max-width: calc(12 * 4 * var(--grid-unit));
+
+  /* Font sizes */
+  --toc: calc(3 * var(--grid-unit));
+  --tiny: calc(3 * var(--grid-unit));
+  --title: calc(12 * var(--grid-unit));
+}
+
+.content-grid {
+  --margin-note-layout: sidebar;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, var(--sidebar-max-width))
+    minmax(0, var(--content-max-width))
+    minmax(0, var(--sidebar-max-width));
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.content-grid-prose {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.content-grid-prose-and-notes {
+  grid-column: 2 / 4;
+  width: 100%;
+  max-width: var(--prose-and-notes-max-width);
+  min-width: 0;
+}
+
+.prose-container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--space-4);
+  padding-left: var(--space-4);
+}
+
+@media (width <= 62rem) {
+  .content-grid {
+    --margin-note-layout: normal-flow;
+
+    grid-template-columns: minmax(0, var(--content-max-width));
+    max-width: var(--content-max-width);
+  }
+
+  .content-grid-prose,
+  .content-grid-prose-and-notes {
+    grid-column: 1;
+    max-width: var(--content-max-width);
+  }
+}
+
+@media (width <= 50rem) {
+  .content-grid {
+    grid-template-columns: minmax(0, 1fr);
+    padding-right: var(--space-4);
+    padding-left: var(--space-4);
+  }
+}

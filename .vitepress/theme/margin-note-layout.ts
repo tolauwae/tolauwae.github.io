@@ -34,7 +34,8 @@ export function useMarginNoteLayout() {
   function layoutMarginNotes(): void {
     if (!isMounted) return
     const content = contentRef.value
-    if (!content || window.matchMedia("(max-width: 62rem)").matches) {
+    const layoutMode = content && getComputedStyle(content).getPropertyValue("--margin-note-layout").trim()
+    if (!content || layoutMode !== "sidebar") {
       resetMarginNoteLayout()
       return
     }

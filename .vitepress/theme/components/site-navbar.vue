@@ -1,14 +1,27 @@
 <template>
   <nav class="site-nav">
     <div class="site-nav__content">
-      <div class="site-nav__left"><a href="/">Tom Lauwaerts</a></div>
-      <div class="site-nav__center"></div>
-      <div class="site-nav__right"><a class="resume-button" href="/resume.pdf" target="_blank">CV</a><a href="/essays">Essays</a></div>
+      <div class="site-nav__left">
+        <a href="/">Tom Lauwaerts</a>
+      </div>
+      <div class="site-nav__center" />
+      <div class="site-nav__right">
+        <a
+          class="resume-button"
+          href="/resume.pdf"
+          target="_blank"
+        >CV</a><a href="/essays">Essays</a>
+      </div>
     </div>
   </nav>
 </template>
 
 <style scoped>
+* {
+  font-family: var(--sans-serif);
+  font-weight: 600;
+}
+
 .site-nav {
   display: flex;
   align-items: center;
@@ -56,7 +69,7 @@ a:hover {
     border-bottom: 1px solid var(--text-inverse);
 }
 
-@media (max-width: 62rem) {
+@media (width <= 62rem) {
   .site-nav {
     padding-left: var(--space-4);
     padding-right: var(--space-4);

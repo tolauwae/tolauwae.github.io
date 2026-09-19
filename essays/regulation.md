@@ -3,7 +3,7 @@ layout: article
 title: "The Careful Calculations Behind the AI Warnings"
 description: During the past weekend Dario Amodei gave a much discussed interview where he tried to convince the public that AI is too dangerous to develop at the current pace.
 author: Tom Lauwaerts
-date: 2026-09-17
+date: 2026-09-15
 language: English
 ail: 1
 ---
@@ -77,20 +77,21 @@ Ironically, while many are proposing to slow down development through regulation
 There is also a simple political reality at play here.
 While the current Trump administration seems convinced in not regulating AI in any new ways, future administrations are unlikely to stay this course.
 Tech CEOs may safely assume that a democrat or even a less regulation-shy republican may take over in due time and still impose severe and hindering regulations.
-A route already paved by the European Union.[^11]
+A route already paved by the European Union I might add.[^11]
 If regulation is inevitable, it may be worthwhile to stay closely involved.
 Someone will need to define the industry's standards for safety, better it be your own company.
 Keep a firm hand on the wheel, you might say.
 
 [^11]: European Commission, _[Regulation (EU) 2024/1689](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689)_.
 
+Nevertheless, the subduing of the competition remains a far more attractive benefit.
 In essence, the AI companies are hoping to get the government to impose an oligopoly by regulation.
 Forming a cartel would allow them to grow to even more enormous sizes.
 At the same time, this domination would make it easier to argue that they are indispensable, and _"too big to fail"_.
-If their monumental capital expenditure on data centres would implode, as many fear, it would be easier for them to convince the government to step in and bail them out from their costly mistakes.
+If their monumental capital expenditure on data centres would implode, as many fear, it would be easier for them to convince the government to step in and bail them out.
 
 If you are still not convinced, I would point out that I conspicuously left out one company from this story; NVIDIA.
-Of the big AI firms in the U.S., Jen-Hsun Huang as CEO of NVIDIA, is the only one to dismiss the concerns about the AI development pace.[^13]
+Of the big AI firms in the U.S., Jen-Hsun Huang as CEO of NVIDIA, is the only one to dismiss the concerns about the AI development pace.[^13][^15]
 Looking at the incentives again gives a very clear picture.
 A future where there is massive competition with many different companies developing AI models rather than a cartel of tech giants, would be greatly more profitable for hardware provider NVIDIA.
 
@@ -105,13 +106,13 @@ Regulations may hope to avert some Hollywood-style AI doom scenario, but in real
 As Thomas Sowell so clearly put it, _"Economic policies need to be analyzed according to the incentives they create, and not according to the hopes that inspired them."_.[^4]
 
 As the regulations reduce competition, and the tech giants solidify their market positions; the need to innovate will go down precipitously.
-If you need more proof of this, we can easily compare the situations in regulation-free U.S of Trump with the early regulation-adopting European Union.
+If you need more proof of this, we can easily compare the situations in the regulation-free U.S. with the early regulation-adopting European Union.
 In the U.S. AI start-ups in places such as San Francisco are growing like mushrooms.
 Many of these start-ups are developing their own models, such as _Thinking Machines Lab_, _inception_, _essential AI_, _Arcee_, _Liquid_, and so on.
 Across the Atlantic, there are few companies developing similar models.
-Even the most prominent, _Mistral AI_, Aleph Alpha, and DEEPL, are continually playing catch-up with U.S. companies.[^14]
+Even the most prominent, _Mistral AI_, _Aleph Alpha_, and _DEEPL_, are continually playing catch-up with U.S. companies.[^14]
 
-When regulation destroys the competitive and vibrant startup landscape in the U.S., the large dominant companies will become the only capable of developing new frontier models.
+When regulation destroys the competitive and vibrant startup landscape in the U.S., the large dominant companies will become exclusively capable of developing new frontier models.
 With declining fear of competition, they will become uninterested in pushing the frontier.
 The costs would no longer justify the rewards.
 Subsequently, AI development pace would fall.
@@ -133,11 +134,11 @@ After all, the threats posed by AI lie in the use of the technology, rather than
 
 [^6]: This argument was already put forward by Deputy U.S. Attorney General Lisa Monaco back in [March 2024](https://www.justice.gov/archives/opa/speech/deputy-attorney-general-lisa-monaco-delivers-keynote-remarks-american-bar-associations).
 
-In the end, we can only guess at the real motivation of tech leaders calling for their own regulation[^15], but what is clear is the possible cartel forming it could enable.
+In the end, we can only guess at the real motivation of tech leaders calling for their own regulation, but what is clear is the possible cartel forming it could enable.
 Without regulations on the levels of the pharma or food industries (to name a few), companies would be able to compete more easily with the large tech firms.
 In turn this competition would diminish much of the power of the big firms, since much of the feared coercion would only be possible through a cartel.
 
-[^15]: When finishing this essay, Mark Zuckerberg of Meta bucks the trend by dismissing the need for regulation and minimizing the possible risks.
+[^15]: I also left out Meta. When finishing this essay, Mark Zuckerberg joined Jensen Huang in opposing slower development. Most likely because Meta lacks behind Antropic and OpenAI.
 
 So for all those jumping for the government to take the fight to the AI companies, like Bernie Sanders with his _"Ban AI bill"_, be careful what you wish for.
 You might make yourself hostage to enormous tech companies that are _too big to fail_.

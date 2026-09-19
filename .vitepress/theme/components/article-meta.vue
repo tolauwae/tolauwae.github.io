@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {useData} from "vitepress"
-import AilBadge from "./ailbadge.vue"
+import AilBadge from "./ail-badge.vue"
 
 const {frontmatter} = useData()
 
@@ -21,10 +21,10 @@ function formatDate(value: unknown): string {
 
 <template>
   <section class="metadata">
-    <div class="article__metadata-grid">
-      <div class="article__metadata-content">
-        <b>{{ frontmatter.author }}</b>
+    <div class="article__metadata-grid content-grid">
+      <div class="article__metadata-content content-grid-prose-and-notes">
         <span class="subdued tags">
+          <b>{{ frontmatter.author }}</b>
           <span>{{ formatDate(frontmatter.date) }}</span>
           <AilBadge :level="frontmatter.ail" />
         </span>
@@ -34,16 +34,11 @@ function formatDate(value: unknown): string {
 </template>
 
 <style scoped>
-.article__metadata-grid {
-  display: grid;
-  grid-template-columns: var(--sidebar-max-width) calc(var(--content-max-width) + var(--sidebar-max-width));
-  width: 100%;
-  max-width: min(var(--page-max-width), 100vw);
-  margin: 0 auto;
+* {
+  font-family: var(--sans-serif);
 }
 
 .article__metadata-content {
-  grid-column: 2;
   padding-top: var(--space-8);
   border-bottom: 2px solid var(--lines);
 }
@@ -59,15 +54,4 @@ span.tags {
   padding-bottom: var(--space-4);
 }
 
-@media (max-width: 62rem) {
-  .article__metadata-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .article__metadata-content {
-    grid-column: 1 / -1;
-    margin-left: var(--space-4);
-    margin-right: var(--space-4);
-  }
-}
 </style>

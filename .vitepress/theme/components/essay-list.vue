@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import {computed} from "vue"
 import {data as essays} from "../../../essays.data"
-import AilBadge from "./ailbadge.vue"
 
 const props = defineProps<{limit?: number}>()
 const visibleEssays = computed(() => props.limit ? essays.slice(0, props.limit) : essays)
@@ -16,14 +15,20 @@ const formatDate = (date: unknown) => new Intl.DateTimeFormat("en-GB", {
 
 <template>
   <ul class="essay-list">
-    <li v-for="essay in visibleEssays" :key="essay.url">
+    <li
+      v-for="essay in visibleEssays"
+      :key="essay.url"
+    >
       <a :href="essay.url">
-        <span class="essay-list__date"><span>{{essay.frontmatter.language}}</span>
+        <span class="essay-list__date"><span>{{ essay.frontmatter.language }}</span>
           <!--<AilBadge :level="essay.frontmatter.ail" />-->
           {{ formatDate(essay.frontmatter.date) }}
         </span>
         <span class="essay-list__title">{{ essay.frontmatter.title }}</span>
-        <span v-if="essay.frontmatter.description" class="essay-list__description">
+        <span
+          v-if="essay.frontmatter.description"
+          class="essay-list__description"
+        >
           {{ essay.frontmatter.description }}
         </span>
       </a>

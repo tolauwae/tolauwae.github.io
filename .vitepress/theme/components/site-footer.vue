@@ -1,7 +1,7 @@
 <template>
   <section class="site-footer">
-    <div class="site-footer__content">
-      <span class="section__heading"><h4>Personal Information</h4></span>
+    <div class="site-footer__content prose-container">
+      <span class="section-heading"><h4>Personal Information</h4></span>
       <div class="info">
         <div>
           <b>contact</b>
@@ -15,26 +15,34 @@
         <div>
           <b>socials</b>
           <ul>
-          <li><a href="https://scholar.google.com/citations?user=uHdt08sAAAAJ&hl=en&oi=ao">google scholar</a></li>
-          <li><a href="https://github.com/tolauwae">github</a></li>
-          <li><a href="https://orcid.org/0000-0003-1262-8893">orcid</a></li>
+            <li><a href="https://scholar.google.com/citations?user=uHdt08sAAAAJ&hl=en&oi=ao">google scholar</a></li>
+            <li><a href="https://github.com/tolauwae">github</a></li>
+            <li><a href="https://orcid.org/0000-0003-1262-8893">orcid</a></li>
           </ul>
-
         </div>
 
         <div>
           <b>about</b>
           <ul>
-          <li><a href="/resume.pdf" target="_blank">curriculum vitae</a></li>
+            <li>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+              >curriculum vitae</a>
+            </li>
           </ul>
         </div>
         <!--<div id="copyright">          <span class="dim">©2026 Tom Lauwaerts</span>        </div>-->
       </div>
     </div>
-</section>
-  </template>
+  </section>
+</template>
 
   <style scoped>
+  * {
+    font-family: var(--sans-serif);
+  }
+
   a {
     color: var(--text-inverse);
     background-color: transparent;
@@ -55,7 +63,7 @@
     margin-top: var(--space-1);
   }
 
-  .section__heading {
+  .section-heading {
     border-bottom-color: var(--text-inverse);
     border-top: none;
   }
@@ -69,9 +77,7 @@
   }
 
   .site-footer__content {
-    max-width: var(--content-max-width);
-    margin: 0 auto;
-    padding: var(--space-8) var(--space-4) 0;
+    padding-top: var(--space-8);
   }
 
   .info {
@@ -92,7 +98,7 @@
     padding-top: var(--space-4);
   }
 
-  @media (max-width: 62rem) {
+  @media (width <= 62rem) {
     .info {
       grid-template-columns: 1fr;
     }

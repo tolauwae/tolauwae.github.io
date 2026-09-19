@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import {useData} from 'vitepress'
-import SiteNav from './components/sitenav.vue'
-import Footer from './components/footer.vue'
-import Article from './Article.vue'
-import Home from './Home.vue'
-import Overview from './Overview.vue'
+import SiteNavbar from './components/site-navbar.vue'
+import SiteFooter from './components/site-footer.vue'
+import ArticlePage from './article-page.vue'
+import HomePage from './home-page.vue'
+import OverviewPage from './overview-page.vue'
 
 // https://vitepress.dev/reference/runtime-api#usedata
 const {frontmatter, page} = useData()
@@ -12,19 +12,19 @@ const {frontmatter, page} = useData()
 
 <template>
   <div class="site-layout">
-    <SiteNav />
+    <SiteNavbar />
 
     <main>
-      <Home v-if="frontmatter.home" />
+      <HomePage v-if="frontmatter.home" />
       <div v-else-if="page.relativePath.endsWith('/index.md')">
-        <Overview />
+        <OverviewPage />
       </div>
       <div v-else-if="frontmatter.layout === 'article' || frontmatter.article">
-          <Article />
+        <ArticlePage />
       </div>
     </main>
 
-    <Footer />
+    <SiteFooter />
   </div>
 </template>
 

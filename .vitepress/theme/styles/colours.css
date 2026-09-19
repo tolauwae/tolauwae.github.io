@@ -3,13 +3,11 @@
     --text-inverse: white;
     --subtext: #566B82;
     --subtext-inverse: color-mix(in srgb, var(--text-inverse) 70%, transparent);
-
     --surface: #111c27;
     --crust: #d8e1ea;
     --navbar: #111c27;
-
     --lines: #D8E1EA;
     --mantle: #EBF0F5;
-
+    --shallow: #F5F8FA;
     --highlight: #2A2D31;
 }

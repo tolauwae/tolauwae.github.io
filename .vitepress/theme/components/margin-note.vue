@@ -6,8 +6,16 @@ defineProps<{
 </script>
 
 <template>
-  <aside :id="id" class="margin-note" role="note" :aria-label="`Note ${number}`">
-    <span class="margin-note__number" aria-hidden="true">{{ number }}.</span>
+  <aside
+    :id="id"
+    class="margin-note"
+    role="note"
+    :aria-label="`Note ${number}`"
+  >
+    <span
+      class="margin-note__number"
+      aria-hidden="true"
+    >{{ number }}.</span>
     <div class="margin-note__content">
       <slot />
     </div>
@@ -37,13 +45,6 @@ defineProps<{
 }
 
 .margin-note__content :deep(.footnote-backref) {
-  display: none;
   white-space: nowrap;
-}
-
-@media (max-width: 62rem) {
-  .margin-note__content :deep(.footnote-backref) {
-    display: inline;
-  }
 }
 </style>

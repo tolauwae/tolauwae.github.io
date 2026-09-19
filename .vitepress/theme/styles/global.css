@@ -1,12 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Karla:ital,wght@0,200..800;1,200..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Lusitana:wght@400;700&family=Ma+Shan+Zheng&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&family=Young+Serif&display=swap');
 
 :root{
-    --serif: Libre Baskerville, serif;
+    --font-title: var(--sans-serif);
+    --serif: neuton, alegreya, lusitana, libre baskerville, serif;
+    --sans-serif: "Source Sans 3", "Mona Sans", sans-serif;
+    --monospace: jetbrains mono, "Source Code Pro", monospace;
+    }
+
+body {
+    margin: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--sans-serif);
+    font-variant-ligatures: common-ligatures;
 }
 
 html {
-    font-family: "Mona Sans", sans-serif;
+    font-family: var(--serif);
+    font-size: 11pt;
+    font-variant-ligatures: common-ligatures;
+}
+
+pre, code {
+    font-family: var(--monospace);
+    font-variant-ligatures: common-ligatures no-discretionary-ligatures historical-ligatures contextual;
+    font-weight: 400;
+    font-size: 9pt;
 }
 
 .nostyle, .nostyle:hover {
@@ -35,7 +56,7 @@ a:hover {
     cursor: pointer;
 }
 
-.section__heading {
+.section-heading {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0 0 var(--space-4);
@@ -44,7 +65,8 @@ a:hover {
     border-top: 1px solid var(--lines);
     font-size: 1.17em;
   }
-  .section__heading * {
+
+  .section-heading * {
     margin: 0;
     padding: 0;
   }

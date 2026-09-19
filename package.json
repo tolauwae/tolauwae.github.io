@@ -1,12 +1,24 @@
 {
   "type": "module",
   "scripts": {
+    "lint": "npm run lint:css && npm run lint:typescript && npm run lint:vue",
+    "lint:css": "stylelint \".vitepress/theme/styles/**/*.css\"",
+    "lint:typescript": "eslint --max-warnings=0 --no-error-on-unmatched-pattern \"**/*.{ts,mts}\"",
+    "lint:vue": "eslint --max-warnings=0 \".vitepress/theme/**/*.vue\" && stylelint \".vitepress/theme/**/*.vue\"",
     "site:dev": "vitepress dev",
     "site:build": "vitepress build",
     "site:preview": "vitepress preview"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.11.0",
+    "eslint-plugin-vue": "^10.11.0",
+    "globals": "^17.12.0",
     "markdown-it-footnote": "^4.0.0",
+    "stylelint": "^17.15.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-config-standard-vue": "^2.0.0",
+    "typescript-eslint": "^8.70.0",
     "vitepress": "^1.6.4",
     "vue": "^3.5.21"
   }

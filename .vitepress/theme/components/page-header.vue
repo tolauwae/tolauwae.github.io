@@ -7,7 +7,6 @@ const props = withDefaults(defineProps<{variant?: "article" | "overview"}>(), {
 })
 const {frontmatter, page} = useData()
 const pathParts = computed(() => page.value.relativePath.split("/"))
-const fileName = computed(() => pathParts.value.at(-1)?.slice(0, -3) ?? "")
 const directoryName = computed(() => pathParts.value.at(-2) ?? "")
 const sectionName = computed(() => directoryName.value.charAt(0).toUpperCase() + directoryName.value.slice(1))
 const isOverview = computed(() => props.variant === "overview")
@@ -15,13 +14,24 @@ const title = computed(() => frontmatter.value.title || sectionName.value)
 </script>
 
 <template>
-  <header class="page-header" :class="{ overview: isOverview }">
-    <div class="page-header__grid">
-      <div class="page-header__content">
+  <header
+    class="page-header"
+    :class="{ overview: isOverview }"
+  >
+    <div
+      class="page-header__grid"
+      :class="isOverview ? 'prose-container' : 'content-grid'"
+    >
+      <div
+        class="page-header__content"
+        :class="{ 'content-grid-prose': !isOverview }"
+      >
         <slot>
-          <span class="page-header__label">{{ frontmatter.language }}</span>
+          <span class="page-header-label">{{ frontmatter.language }}</span>
           <h1>{{ title }}</h1>
-          <p v-if="frontmatter.description">{{ frontmatter.description }}</p>
+          <p v-if="frontmatter.description">
+            {{ frontmatter.description }}
+          </p>
         </slot>
       </div>
     </div>
@@ -58,32 +68,24 @@ const title = computed(() => frontmatter.value.title || sectionName.value)
 
 .page-header::after {
   background: rgb(12 22 31 / 30%);
-  -webkit-backdrop-filter: blur(2.25rem) saturate(115%);
   backdrop-filter: blur(2.25rem) saturate(115%);
 }
 
 .page-header__grid {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: var(--sidebar-max-width) var(--content-max-width) var(--sidebar-max-width);
-  box-sizing: border-box;
-  width: 100%;
-  max-width: var(--page-max-width);
   min-height: calc(4 * var(--navbar-height));
-  margin: 0 auto;
-  padding: var(--space-24) 0 var(--space-12);
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-12);
 }
 
 .page-header__content {
-  grid-column: 2 / -1;
   align-self: center;
-  max-width: var(--content-max-width);
 }
 
 .page-header h1 {
   margin: var(--space-6) 0 0;
-  font-family: var(--serif);
+  font-family: var(--font-title);
   font-size: var(--title);
   font-weight: bold;
   line-height: 1.2;
@@ -96,28 +98,12 @@ const title = computed(() => frontmatter.value.title || sectionName.value)
   line-height: 1.5;
 }
 
-.page-header__label {
+.page-header-label {
   font-size: var(--tiny);
 }
 
-.page-header.overview .page-header__grid {
-  display: block;
-  max-width: var(--content-max-width);
-  padding-right: var(--space-4);
-  padding-left: var(--space-4);
-}
-
-@media (max-width: 62rem) {
+@media (width <= 50rem) {
   .page-header__grid {
-    grid-template-columns: minmax(0, var(--sidebar-max-width)) minmax(0, var(--content-max-width));
-    padding-right: var(--space-4);
-    padding-left: var(--space-4);
-  }
-}
-
-@media (max-width: 50rem) {
-  .page-header__grid {
-    display: block;
     min-height: auto;
     padding-top: var(--space-12);
     padding-bottom: var(--space-12);

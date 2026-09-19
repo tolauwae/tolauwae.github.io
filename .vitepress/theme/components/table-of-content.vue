@@ -5,10 +5,18 @@ const {page} = useData()
 </script>
 
 <template>
-  <nav id="toc" aria-labelledby="toc-title">
-    <h2 id="toc-title">Contents</h2>
+  <nav
+    id="toc"
+    aria-labelledby="toc-title"
+  >
+    <h2 id="toc-title">
+      Contents
+    </h2>
     <ul v-if="page.headers.length">
-      <li v-for="header in page.headers" :key="header.slug">
+      <li
+        v-for="header in page.headers"
+        :key="header.slug"
+      >
         <a :href="header.link">{{ header.title }}</a>
       </li>
     </ul>
